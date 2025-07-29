@@ -75,7 +75,7 @@ const Header = () => {
                         <div className="flex items-center space-x-3">
                             <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center overflow-hidden">
                                 <img
-                                    src="/Logo.png"
+                                    src="/Logo.jpg"
                                     alt="Logo"
                                     className="w-full h-full object-cover"
                                 />
