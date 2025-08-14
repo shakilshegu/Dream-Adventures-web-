@@ -83,8 +83,7 @@ const Header = () => {
                             <span
                                 className={`
       font-bold text-2xl transition-colors duration-300
-      ${isScrolled ? 'text-green-600' : 'text-white'}
-    `}
+      ${isScrolled ? 'text-green-600' : 'text-white'}`}
                             >
                                 DreamAdventures
                             </span>

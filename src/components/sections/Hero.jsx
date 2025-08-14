@@ -13,7 +13,7 @@ const Hero = () => {
     {
       title: "Unforgettable Journeys Await",
       subtitle: "From pristine beaches to majestic mountains, create memories that last a lifetime",
-      backgroundImage: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      backgroundImage: "https://images.unsplash.com/photo-1637066742971-726bee8d9f56?q=80&w=1249&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Experience Nature's Wonders",
@@ -110,9 +110,6 @@ const Hero = () => {
                 Watch Our Story
               </button>
             </div>
-
-           
-            
           </div>
         </div>
       </div>
