@@ -44,11 +44,11 @@ const Header = () => {
     }, [isMobileMenuOpen]);
 
     const navItems = [
-        { name: 'Home', href: '#home' },
+        { name: 'Home', href: '/' },
         { name: 'Destinations', href: '#destinations' },
         { name: 'Packages', href: '#packages' },
         { name: 'About', href: '#about' },
-        { name: 'Contact', href: '#contact' }
+        { name: 'Contact', href: 'contacts' }
     ];
 
     const handleNavClick = (href) => {
@@ -111,6 +111,11 @@ const Header = () => {
 
                         {/* Desktop CTA Button */}
                         <div className="hidden md:flex items-center">
+                            <a
+                                href="https://wa.me/918304046814?text=Hi%20Dream%20Adventures%20%F0%9F%91%8B%2C%20I%E2%80%99d%20like%20to%20book%20a%20trip%20and%20get%20the%20detailed%20itinerary%2C%20please%21"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            ></a>
                             <button className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-xl transition-all duration-300 transform hover:scale-105">
                                 Book Now
                             </button>

@@ -1,20 +1,45 @@
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+
 import Layout from './components/layout/Layout'
+import Hero from './components/sections/Hero'
 import DestinationCards from './components/sections/DestinationCards'
 import Features from './components/sections/Features'
-import Hero from './components/sections/Hero'
-function App() {
+import Contacts from './components/sections/Contacts'
+import NotFoundPage from './components/sections/NotFound'
+import { useRef } from 'react'
 
+// App.js - Updated approach
+function App() {
+  const destinationsRef = useRef(null);
+
+  const scrollToDestinations = () => {
+    destinationsRef.current?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  };
   return (
-    <>
-    <Layout>
-      <Hero />
-      <DestinationCards />
-      <Features />
-      {/* Additional sections will be added here */}
-    </Layout>
-    </>
+    <Router>
+      <Routes>
+        {/* Pages with Layout (normal pages) */}
+        <Route path="/" element={
+          <Layout>
+            <Hero onExploreClick={scrollToDestinations}/>
+            <DestinationCards ref={destinationsRef} />
+            <Features />
+          </Layout>
+        } />
+        
+        <Route path="/contacts" element={
+          <Layout>
+            <Contacts />
+          </Layout>
+        } />
+
+        {/* 404 - No Layout (full screen) */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Router>
   )
 }
 
