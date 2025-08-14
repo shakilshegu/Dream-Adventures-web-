@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../common/Header';
+import Footer from '../common/Footer';
 
 const Layout = ({ children }) => {
   return (
@@ -8,7 +9,7 @@ const Layout = ({ children }) => {
       <main className="relative">
         {children}
       </main>
-      {/* Footer will be added later */}
+      <Footer/>
     </div>
   );
 };
