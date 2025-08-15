@@ -9,7 +9,6 @@ import Contacts from './components/sections/Contacts'
 import NotFoundPage from './components/sections/NotFound'
 import { useRef } from 'react'
 
-// App.js - Updated approach
 function App() {
   const destinationsRef = useRef(null);
 
