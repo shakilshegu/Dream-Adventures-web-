@@ -44,12 +44,13 @@ const Header = () => {
     }, [isMobileMenuOpen]);
 
     const navItems = [
-        { name: 'Home', href: '/' },
-        { name: 'Destinations', href: '#destinations' },
-        { name: 'Packages', href: '#packages' },
-        { name: 'About', href: '#about' },
-        { name: 'Contact', href: 'contacts' }
+        { name: 'Home', to: '/' },               
+        { name: 'Destinations', to: '#destinations', isAnchor: true },
+        { name: 'Packages', to: '#packages', isAnchor: true },
+        { name: 'About', to: '#about', isAnchor: true },
+        { name: 'Contact', to: '/contacts' }      
     ];
+
 
     const handleNavClick = (href) => {
         setIsMobileMenuOpen(false);
