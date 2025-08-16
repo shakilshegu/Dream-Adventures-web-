@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -44,11 +45,11 @@ const Header = () => {
     }, [isMobileMenuOpen]);
 
     const navItems = [
-        { name: 'Home', to: '/' },               
+        { name: 'Home', to: '/' },
         { name: 'Destinations', to: '#destinations', isAnchor: true },
         { name: 'Packages', to: '#packages', isAnchor: true },
         { name: 'About', to: '#about', isAnchor: true },
-        { name: 'Contact', to: '/contacts' }      
+        { name: 'Contact', to: '/contacts' }
     ];
 
 
@@ -94,19 +95,18 @@ const Header = () => {
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-8">
                             {navItems.map((item) => (
-                                <a
+                                <Link
                                     key={item.name}
-                                    href={item.href}
+                                    to={item.to}
                                     className={`
-                                        font-medium transition-all duration-300 hover:scale-105
-                                        ${isScrolled
-                                            ? 'text-gray-700 hover:text-green-600'
-                                            : 'text-white hover:text-green-200'
-                                        }
-                                    `}
+        font-medium transition-all duration-300 hover:scale-105
+        ${isScrolled
+                                            ? "text-gray-700 hover:text-green-600"
+                                            : "text-white hover:text-green-200"}
+      `}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
 
@@ -188,28 +188,41 @@ const Header = () => {
                     {/* Mobile Navigation Links */}
                     <div className="py-6">
                         {navItems.map((item, index) => (
-                            <a
+                            <Link
                                 key={item.name}
-                                href={item.href}
+                                to={item.to}
                                 onClick={(e) => {
-                                    e.preventDefault();
-                                    handleNavClick(item.href);
+                                    if (item.isAnchor) {
+                                        e.preventDefault();
+                                        handleNavClick(item.to); // smooth scroll handler
+                                    }
                                 }}
                                 className={`
-                                    block px-6 py-4 text-lg font-medium text-gray-800 hover:text-green-600 hover:bg-green-50 transition-all duration-200
-                                    transform hover:translate-x-2
-                                `}
+        block px-6 py-4 text-lg font-medium text-gray-800 hover:text-green-600 hover:bg-green-50 transition-all duration-200
+        transform hover:translate-x-2
+      `}
                                 style={{ animationDelay: `${index * 50}ms` }}
                             >
                                 <div className="flex items-center space-x-3">
                                     <span>{item.name}</span>
-                                    <svg className="w-4 h-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    <svg
+                                        className="w-4 h-4 opacity-50"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M9 5l7 7-7 7"
+                                        />
                                     </svg>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
+
 
                     {/* Mobile CTA Section */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-100 bg-gray-50">
